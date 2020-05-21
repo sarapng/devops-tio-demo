@@ -69,7 +69,7 @@ def pushToImage(containerName, tag, dockerUser, dockerPassword){
 }
 
 def runApp(containerName, tag, dockerHubUser, httpPort, accessKey,secretKey){
-    //sh "docker pull $dockerHubUser/$containerName"
+    sh "docker pull $dockerHubUser/$containerName"
     try {
         sh "docker rm devops-tio-demo"
     } catch(error){}
